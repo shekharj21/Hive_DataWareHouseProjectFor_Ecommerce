@@ -1,0 +1,20 @@
+-- Create t2.xlarge ec2 instance with Amazon Linux 2 AMI (HVM)
+Storage- 96 GB
+Allow ports- 0-10000
+
+
+
+
+-- Connect to the instance using SSH
+ssh -i "hive_docker_setup.pem" ec2-user@ec2-13-232-237-175.ap-south-1.compute.amazonaws.com
+
+
+
+
+-- Install and setup Docker and Docker-compose
+sudo yum update -y
+sudo yum install docker
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo gpasswd -a $USER docker
+newgrp docker
