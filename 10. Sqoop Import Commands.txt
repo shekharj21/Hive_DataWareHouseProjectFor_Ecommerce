@@ -16,7 +16,7 @@ sqoop import --connect jdbc:mysql://ra_mysql:3306/testdb --username root \
 
 sqoop import --connect jdbc:mysql://ra_mysql:3306/testdb --username root --password example --query 'SELECT CreditCardID, CardType, CardNumber, ExpMonth, ExpYear, ModifiedDate FROM ccard WHERE $CONDITIONS' --split-by CreditCardID --target-dir /input/creditcard/ 
 
-# Commands to check the files created
+############################## Commands to check the files created
 
 hadoop fs -ls /input/v_customer/
 hadoop fs -ls /input/v_salesorderheader_demo/ 
